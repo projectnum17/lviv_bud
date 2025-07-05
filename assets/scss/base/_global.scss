@@ -1,0 +1,45 @@
+@use 'mixins' as *;
+@use 'media' as *;
+@use 'var' as *;
+
+html,
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font: 400 16px/1.5 var(--ff-secondary);
+    color: var(--black-color);
+    background: var(--light-grey);
+}
+
+main {
+    flex: 1;
+}
+
+button {
+    @include reset_button;
+    display: flex;
+}
+
+a {
+    @include reset_link;
+}
+
+.container {
+    max-width: 1520px;
+    padding-inline: 20px;
+    margin: 0 auto;
+
+    &--lg {
+        max-width: 1580px;
+    }
+}
+
+section {
+    @include media('mobile') {
+        scroll-margin-top: 80px;
+    }
+}

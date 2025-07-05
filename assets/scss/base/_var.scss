@@ -1,0 +1,18 @@
+:root {
+    --ff-primary: 'Halvar', sans-serif;
+    --ff-secondary: 'Helvetica', sans-serif;
+
+    --light-grey: #faf8ff;
+    --dark-grey: #343434;
+    --white-color: #fff;
+    --black-color: #070707;
+    --accent-color: #40b686;
+
+    --section-padding: 128px;
+}
+
+@media (max-width: 767px) {
+    :root {
+        --section-padding: 64px;
+    }
+}

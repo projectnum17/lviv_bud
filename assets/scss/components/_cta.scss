@@ -1,0 +1,96 @@
+@use '../base/media' as *;
+@use '../base/mixins' as *;
+.link {
+    &--primary {
+        align-items: center;
+        span {
+            &:first-child {
+                display: inline-flex;
+                flex-shrink: 0;
+                box-shadow: none;
+                @include transitions(0.3s);
+                svg {
+                    @include transitions(0.3s);
+                }
+            }
+        }
+
+        @include hover {
+            span {
+                &:first-child {
+                    background: var(--accent-color);
+                    box-shadow: 0px 12px 48px 4px #3ddd9c33;
+                    svg {
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+
+        &.link--lg {
+            gap: 32px;
+            span {
+                &:first-child {
+                    padding: 20px;
+                    border: 1px solid var(--light-grey);
+                    color: var(--light-grey);
+
+                    svg {
+                        width: 48px;
+                        height: 48px;
+                    }
+                }
+
+                &:last-child {
+                    font: 400 18px / 130% var(--ff-secondary);
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                }
+            }
+
+            @include hover {
+                span {
+                    &:first-child {
+                        border-color: var(--accent-color);
+                        svg {
+                            color: var(--black-color);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.link--sm {
+            gap: 24px;
+            span {
+                &:first-child {
+                    padding: 7px;
+                    border: 1px solid var(--light-grey);
+                    color: var(--light-grey);
+
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+
+                &:last-child {
+                    font: 400 16px / 130% var(--ff-secondary);
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                }
+            }
+
+            @include hover {
+                span {
+                    &:first-child {
+                        border-color: var(--accent-color);
+                        svg {
+                            color: var(--light-grey);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

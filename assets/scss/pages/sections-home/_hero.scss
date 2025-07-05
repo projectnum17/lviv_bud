@@ -1,0 +1,70 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.main--home {
+    .hero {
+        background: url('../images/bg-hero.jpg') no-repeat center center / cover;
+        min-height: 100vh;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            background: linear-gradient(90deg, #070707 -1.17%, #001208 100%);
+        }
+
+        @include media('mobile') {
+            min-height: 100svh;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        &__content {
+            padding-block: 218px 120px;
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            justify-content: space-between;
+            color: var(--white-color);
+
+            &-col {
+                &:first-child {
+                    max-width: 816px;
+                }
+
+                &:last-child {
+                    max-width: 355px;
+                }
+            }
+        }
+
+        &__title {
+            font: 500 88px / 100% var(--ff-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 34px;
+
+            span {
+                color: var(--accent-color);
+            }
+        }
+
+        &__description {
+            font: 400 20px / 160% var(--ff-secondary);
+            max-width: 343px;
+            margin-bottom: 74px;
+        }
+
+        &__subtitle {
+            font: 500 24px / 130% var(--ff-primary);
+            text-transform: uppercase;
+        }
+    }
+}
