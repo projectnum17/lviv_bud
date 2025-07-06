@@ -112,7 +112,12 @@
             font: 400 18px / 100% var(--ff-secondary);
             letter-spacing: 1px;
             text-transform: uppercase;
+            opacity: .3;
             @include transitions(0.3s);
+
+            &.lang--active {
+                opacity: 1;
+            }
         }
     }
 

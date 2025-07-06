@@ -9,10 +9,20 @@
     --accent-color: #40b686;
 
     --section-padding: 128px;
+    --section-padding-lg: 164px;
 }
+
+@media (max-width: 991px) {
+    :root {
+        --section-padding: 85px;
+        --section-padding-lg: 110px;
+    }
+}
+
 
 @media (max-width: 767px) {
     :root {
         --section-padding: 64px;
+        --section-padding-lg: 82px;
     }
 }

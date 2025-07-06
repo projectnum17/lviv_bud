@@ -32,8 +32,6 @@
             span {
                 &:first-child {
                     padding: 20px;
-                    border: 1px solid var(--light-grey);
-                    color: var(--light-grey);
 
                     svg {
                         width: 48px;
@@ -47,17 +45,6 @@
                     text-transform: uppercase;
                 }
             }
-
-            @include hover {
-                span {
-                    &:first-child {
-                        border-color: var(--accent-color);
-                        svg {
-                            color: var(--black-color);
-                        }
-                    }
-                }
-            }
         }
 
         &.link--sm {
@@ -65,8 +52,6 @@
             span {
                 &:first-child {
                     padding: 7px;
-                    border: 1px solid var(--light-grey);
-                    color: var(--light-grey);
 
                     svg {
                         width: 24px;
@@ -80,13 +65,46 @@
                     text-transform: uppercase;
                 }
             }
+        }
 
+        &.link--light {
+            span {
+                &:first-child {
+                    border: 1px solid var(--light-grey);
+                    color: var(--light-grey);
+                }
+            }
+        }
+
+        &.link--dark {
+            span {
+                &:first-child {
+                    border: 1px solid var(--black-color);
+                    color: var(--black-color);
+                }
+            }
+        }
+
+        &.hover--light {
             @include hover {
                 span {
                     &:first-child {
                         border-color: var(--accent-color);
                         svg {
                             color: var(--light-grey);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.hover--dark {
+            @include hover {
+                span {
+                    &:first-child {
+                        border-color: var(--accent-color);
+                        svg {
+                            color: var(--black-color);
                         }
                     }
                 }

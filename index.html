@@ -3,8 +3,21 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            href="./assets/images/icons/logo.svg"
+            type="image/svg+xml"
+        />
         <title>LvivBud | Home</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
         <link rel="stylesheet" href="./assets/css/style.min.css" />
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+        ></script>
         <script defer type="module" src="./assets/scripts/main.js"></script>
     </head>
 
@@ -317,7 +330,7 @@
                             <li class="header__lang-item">
                                 <a
                                     href="javascript: void(0)"
-                                    class="header__lang-link"
+                                    class="header__lang-link lang--active"
                                     >ua</a
                                 >
                             </li>
@@ -352,7 +365,7 @@
                             </p>
                             <a
                                 href="javascript: void(0)"
-                                class="hero__link link--primary link--lg link--dark"
+                                class="hero__link link--primary link--lg link--light hover--dark"
                             >
                                 <span>
                                     <svg
@@ -387,6 +400,514 @@
                                 рішення
                             </h2>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section class="develop">
+                <div class="develop__about">
+                    <div class="container">
+                        <h2 class="develop__title h2">
+                            ЩО ТАКЕ ДЕВЕЛОПМЕНТ  ВІД <span>lviv bud</span>
+                        </h2>
+                        <p class="develop__description">
+                            розбудова україни з 2006 року з думкою про комфорт
+                        </p>
+                    </div>
+                </div>
+                <div class="container container--lg">
+                    <div class="develop__info">
+                        <div class="develop__previews">
+                            <div class="develop__previews-item">
+                                <div class="develop__thumb thumb--lg">
+                                    <img
+                                        width="548"
+                                        height="678"
+                                        loading="lazy"
+                                        src="./assets/images/develop_1.jpg"
+                                        alt="Thumbnail"
+                                    />
+                                </div>
+                            </div>
+                            <div class="develop__previews-item">
+                                <div class="develop__thumb thumb--sm">
+                                    <img
+                                        width="458"
+                                        height="678"
+                                        loading="lazy"
+                                        src="./assets/images/develop_2.jpg"
+                                        alt="Thumbnail"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="develop__details">
+                            <div class="info-card">
+                                <h4 class="info-card__title">
+                                    покращення життя людей навколо
+                                </h4>
+                                <p class="info-card__descr">
+                                    для яких дім – це середовище, що виходить
+                                    далеко за межі власної квартири
+                                </p>
+                            </div>
+                            <div class="info-card">
+                                <h4 class="info-card__title">
+                                    наші проекти приносять прибуток
+                                </h4>
+                                <p class="info-card__descr">
+                                    Ще на етапі аналізу та концепції ми детально
+                                    розраховуємо інвестиційну привабливість
+                                    проєкту та оптимально співвідношення його
+                                    вартості, ліквідності та дохідності.
+                                </p>
+                            </div>
+                            <div class="info-card">
+                                <h4 class="info-card__title">
+                                    покращуємо місто
+                                </h4>
+                                <p class="info-card__descr">
+                                    Підкреслюємо особливості ділянки, та
+                                    враховуємо контекст навколишнього простору
+                                    щоб зробити місто краще
+                                </p>
+                            </div>
+                            <a
+                                href="javascript: void(0)"
+                                class="develop__cta link--primary link--sm link--dark hover--light"
+                            >
+                                <span>
+                                    <svg
+                                        width="48"
+                                        height="48"
+                                        viewBox="0 0 48 48"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M14 34L34 14"
+                                            stroke="#FAF8FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        <path
+                                            d="M14 14H34V34"
+                                            stroke="#FAF8FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </span>
+                                <span>детальніше</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="develop__stats">
+                        <h3 class="develop__subtitle">команія сьогодні</h3>
+                        <div class="develop__cards">
+                            <div class="develop__card">
+                                <div class="develop__card-col">
+                                    <div>
+                                        <span>18</span>
+                                        <span>+</span>
+                                    </div>
+                                    <p>років</p>
+                                </div>
+                                <div class="develop__card-col">
+                                    <p>
+                                        Створюємо простори які наповненні життям
+                                        та красою
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="develop__card">
+                                <div class="develop__card-col">
+                                    <div>
+                                        <span>20</span>
+                                        <span>+</span>
+                                    </div>
+                                    <p>проектів</p>
+                                </div>
+                                <div class="develop__card-col">
+                                    <p>
+                                        На сьогодні налічує портфелі компанії на
+                                        сьогодні
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="develop__card">
+                                <div class="develop__card-col">
+                                    <div>
+                                        <span>200</span>
+                                    </div>
+                                    <p>профі</p>
+                                </div>
+                                <div class="develop__card-col">
+                                    <p>
+                                        Усі суміжні спеціалісти працюють в
+                                        єдиній інформаційній моделі.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="projects">
+                <div class="container">
+                    <div class="projects__content">
+                        <div class="projects__head">
+                            <h3 class="projects__subtitle">
+                                реалізовані проекти
+                            </h3>
+                            <a
+                                href="javascript: void(0)"
+                                class="projects__link link--primary link--sm link--light hover--light"
+                            >
+                                <span>
+                                    <svg
+                                        width="48"
+                                        height="48"
+                                        viewBox="0 0 48 48"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M14 34L34 14"
+                                            stroke="#FAF8FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                        <path
+                                            d="M14 14H34V34"
+                                            stroke="#FAF8FF"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </span>
+                                <span>всі проєкти</span>
+                            </a>
+                        </div>
+                        <h2 class="projects__title h2">LvivTech.City</h2>
+                        <a
+                            href="javascript: void(0)"
+                            class="projects__cta link--primary link--lg link--light hover--dark"
+                        >
+                            <span>
+                                <svg
+                                    width="48"
+                                    height="48"
+                                    viewBox="0 0 48 48"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M14 34L34 14"
+                                        stroke="#FAF8FF"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M14 14H34V34"
+                                        stroke="#FAF8FF"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </span>
+                            <span>деталі проєкту</span>
+                        </a>
+                    </div>
+                    <div class="projects__thumb">
+                        <img
+                            loading="lazy"
+                            width="643"
+                            height="744"
+                            src="./assets/images/projects.jpg"
+                            alt="Thumbnail"
+                        />
+                    </div>
+                </div>
+            </section>
+            <section class="special">
+                <div class="container">
+                    <div class="special__head">
+                        <h2 class="h2 special__title">наша спеціалізація</h2>
+                        <p class="special__descr">
+                            великі архітектурні проекти від житлових
+                            багатоповерхових будинків, споруд комерційного
+                            призначення до промислових об’єктів.
+                        </p>
+                    </div>
+                </div>
+                <div class="special__content">
+                    <div class="special__video">
+                        <img
+                            width="950"
+                            height="920"
+                            loading="lazy"
+                            src="./assets/images/special.jpg"
+                            alt="Thumbnail"
+                        />
+                    </div>
+                    <div class="special__info">
+                        <h2 class="h2 special__subtitle">переваги співпраці</h2>
+                        <div class="special__cards">
+                            <div class="special__card">
+                                <h3 class="special__card-title">
+                                    професійність
+                                </h3>
+                                <p class="special__card-text">
+                                    Всі наші фахівці мають досвід 10+ років у
+                                    будівництві. Такий підхід дозволяє нам не
+                                    лише отримувати стабільно хороший результат,
+                                    але забезпечує виняткову якість виконання
+                                    робіт.
+                                </p>
+                            </div>
+                            <div class="special__card">
+                                <h3 class="special__card-title">
+                                    відповідальність
+                                </h3>
+                                <p class="special__card-text">
+                                    Lviv Bud є надійним партнером та виконує
+                                    взяті на себе зобов’язання перед партнерами
+                                    та клієнтами, оскільки вибудовує
+                                    довгострокові взаємовигідні відносини.
+                                </p>
+                            </div>
+                            <div class="special__card">
+                                <h3 class="special__card-title">
+                                    технологічність
+                                </h3>
+                                <p class="special__card-text">
+                                    Наша корпорація досягає високих темпів та
+                                    якості будівництва не тільки за рахунок
+                                    високопрофесійних кадрів, але також за
+                                    допомоги власної сучасної бази будівельного
+                                    обладнання та техніки.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="partners">
+                <div class="container">
+                    <div class="partners__head">
+                        <h2 class="h2 partners__title">
+                            <span>партнери</span> компанії lviv bud
+                        </h2>
+                        <div class="partners__nav">
+                            <button class="partners__nav-btn btn--prev">
+                                <svg
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 32 32"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M24.6667 8L8 24.6667"
+                                        stroke="#070707"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M24.6667 24.6667H8V8"
+                                        stroke="#070707"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </button>
+                            <button class="partners__nav-btn btn--next">
+                                <svg
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 32 32"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M7.33333 24L24 7.33333"
+                                        stroke="#070707"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M7.33333 7.33333H24V24"
+                                        stroke="#070707"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="partners__content">
+                    <div class="container">
+                        <div class="partners__gall swiper">
+                            <div class="partners__gall-wrapper swiper-wrapper">
+                                <div class="partners__gall-slide swiper-slide">
+                                    <div class="gall-box">
+                                        <img
+                                            loading="lazy"
+                                            width="229"
+                                            height="147"
+                                            src="./assets/images/partner_1.png"
+                                            alt="Partner"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="partners__gall-slide swiper-slide">
+                                    <div class="gall-box">
+                                        <img
+                                            loading="lazy"
+                                            width="229"
+                                            height="147"
+                                            src="./assets/images/partner_2.png"
+                                            alt="Partner"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="partners__gall-slide swiper-slide">
+                                    <div class="gall-box">
+                                        <img
+                                            loading="lazy"
+                                            width="229"
+                                            height="147"
+                                            src="./assets/images/partner_3.png"
+                                            alt="Partner"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="partners__gall-slide swiper-slide">
+                                    <div class="gall-box">
+                                        <img
+                                            loading="lazy"
+                                            width="229"
+                                            height="147"
+                                            src="./assets/images/partner_4.png"
+                                            alt="Partner"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="partners__gall-slide swiper-slide">
+                                    <div class="gall-box">
+                                        <img
+                                            loading="lazy"
+                                            width="229"
+                                            height="147"
+                                            src="./assets/images/partner_4.png"
+                                            alt="Partner"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="form">
+                <div class="container">
+                    <div class="form__content">
+                        <h2 class="form__title h2">створюйте разом з нами</h2>
+                        <p class="form__descr">
+                            унікальні об’єкти для життя та бізнесу
+                        </p>
+                    </div>
+                    <div class="form-box">
+                        <h3 class="form-box__title">
+                            надішліть нам повідомлення
+                        </h3>
+                        <p class="form-box__subtitle">
+                            Ми зв‘яжемось з вами і відповімо на всі запитання
+                        </p>
+                        <form class="form-box__review js-form">
+                            <div class="form-box__field">
+                                <label class="form-box__label" for="nameField"
+                                    >Як до вас звертатись?</label
+                                >
+                                <input
+                                    class="form-box__input"
+                                    type="text"
+                                    name="name"
+                                    id="nameField"
+                                    placeholder="Ім’я та Прізвище"
+                                />
+                            </div>
+
+                            <div class="form-box__field">
+                                <label class="form-box__label" for="phoneField"
+                                    >Телефон</label
+                                >
+                                <input
+                                    class="form-box__input"
+                                    type="number"
+                                    name="phone"
+                                    id="phoneField"
+                                    placeholder="Ваш номер для зв’язку"
+                                />
+                            </div>
+
+                            <div class="form-box__check">
+                                <input
+                                    class="form-box__radio"
+                                    type="checkbox"
+                                    id="checkBox"
+                                />
+                                <label
+                                    class="form-box__check-label"
+                                    for="checkBox"
+                                >
+                                    <p class="form-box__check-text">
+                                        Я погоджуюсь з
+                                        <a href="#">Умовами</a> та
+                                        <a href="#"
+                                            >Політикою конфіденційності</a
+                                        >
+                                    </p>
+                                </label>
+                            </div>
+                            <button class="form-box__submit" type="submit">
+                                <div class="text-wrapper">
+                                    <div class="text-wrapper__items">
+                                        <span>надіслати</span>
+                                        <span>надіслати</span>
+                                    </div>
+                                </div>
+                                <div class="img-wrapper">
+                                    <div class="img-wrapper__items">
+                                        <img
+                                            width="24"
+                                            height="24"
+                                            src="./assets/images/icons/ico-arrow-right.svg"
+                                            alt="Icon"
+                                        />
+                                        <img
+                                            width="24"
+                                            height="24"
+                                            src="./assets/images/icons/ico-arrow-right.svg"
+                                            alt="Icon"
+                                        />
+                                    </div>
+                                </div>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -438,7 +959,7 @@
                             </ul>
                             <a
                                 href="javascript: void(0)"
-                                class="footer__info-cta link--primary link--sm link--light"
+                                class="footer__info-cta link--primary link--sm link--light hover--light"
                             >
                                 <span>
                                     <svg
