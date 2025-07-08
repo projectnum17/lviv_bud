@@ -1,7 +1,11 @@
 const formData = () => {
-    const form = document.querySelector('.js-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    const form = document.querySelectorAll('.js-form');
+    if (!form.length) return;
+
+    form.forEach((form) => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
     });
 };
 

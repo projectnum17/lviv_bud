@@ -1,0 +1,91 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.main--blog {
+    padding-top: 196px;
+
+    .about {
+        &__head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 64px;
+        }
+
+        &__title {
+            max-width: 700px;
+        }
+
+        &__descr {
+            max-width: 543px;
+            font: 400 18px / 160% var(--ff-secondary);
+            color: var(--dark-grey);
+        }
+    }
+
+    .filter {
+        margin-bottom: 64px;
+        border-bottom: 1px solid #dfdfdf;
+
+        &__item {
+            height: 38px;
+            cursor: pointer;
+            font: 400 18px / 100% var(--ff-secondary);
+            position: relative;
+            color: var(--dark-grey);
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 4px;
+                transition: 0.3s width linear;
+                background: var(--accent-color);
+            }
+        }
+
+        .item--active {
+            &::before {
+                width: 100%;
+            }
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 64px;
+        }
+    }
+
+    .blog {
+        margin-bottom: var(--section-padding);
+
+        &__cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px 40px;
+            margin-bottom: 48px;
+            padding-bottom: 64px;
+            border-bottom: 1px solid var(--black-color);
+        }
+
+        &__more {
+            font: 400 18px / 100% var(--ff-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 18px 23px;
+            color: inherit;
+            margin: 0 auto;
+            border: 1px solid var(--black-color);
+            @include transitions(.3s);
+            @include hover {
+                border-color: var(--accent-color);
+                background: var(--accent-color);
+                color: var(--white-color);
+            }
+        }
+    }
+}

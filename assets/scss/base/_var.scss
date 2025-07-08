@@ -1,4 +1,7 @@
 :root {
+    --container-width: 1520px;
+    --container-padding: 20px;
+
     --ff-primary: 'Halvar', sans-serif;
     --ff-secondary: 'Helvetica', sans-serif;
 
@@ -18,7 +21,6 @@
         --section-padding-lg: 110px;
     }
 }
-
 
 @media (max-width: 767px) {
     :root {

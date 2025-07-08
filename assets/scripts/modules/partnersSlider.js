@@ -1,6 +1,8 @@
 const partnersSlider = () => {
-    const parentSection = document.querySelector('.partners'),
-        sliderEl = parentSection.querySelector('.partners__gall');
+    const parentSection = document.querySelector('.partners');
+    if (!parentSection) return;
+
+    const sliderEl = parentSection.querySelector('.partners__gall');
     if (!sliderEl) return;
 
     return new Swiper(sliderEl, {

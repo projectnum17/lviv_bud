@@ -13,6 +13,48 @@ body {
     font: 400 16px/1.5 var(--ff-secondary);
     color: var(--black-color);
     background: var(--light-grey);
+
+    &:not(:has(.main--home)) {
+        .header {
+            background: var(--light-grey);
+            color: var(--black-color);
+            border-color: #dfdfdf;
+
+            &--transparent {
+                background: transparent;
+                border-color: rgba(7, 7, 7, 0.1);
+
+                .header__lang {
+                    &::after,
+                    &::before {
+                        background: rgba(7, 7, 7, 0.1);
+                    }
+                }
+            }
+
+            &__lang {
+                &::after,
+                &::before {
+                    background: #dfdfdf;
+                }
+            }
+
+            &__logo {
+                svg {
+                    color: var(--black-color);
+                }
+            }
+
+            &__menu {
+                &-btn {
+                    &::after,
+                    &::before {
+                        background: var(--black-color);
+                    }
+                }
+            }
+        }
+    }
 }
 
 main {
@@ -36,6 +78,18 @@ a {
     &--lg {
         max-width: 1580px;
     }
+}
+
+.container--right {
+    padding-left: calc(
+        (100% - var(--container-width)) / 2 + var(--container-padding)
+    );
+}
+
+.container--left {
+    padding-right: calc(
+        (100% - var(--container-width)) / 2 + var(--container-padding)
+    );
 }
 
 section {

@@ -13,7 +13,7 @@
 
     &--scrolled,
     &--transparent {
-        border-color: var(--black-color);
+        border-color: rgba(7, 7, 7, 0.1);
         color: var(--black-color);
 
         .header__logo {
@@ -25,7 +25,7 @@
         .header__lang {
             &::after,
             &::before {
-                background: var(--black-color);
+                background: rgba(7, 7, 7, 0.1);
             }
         }
 

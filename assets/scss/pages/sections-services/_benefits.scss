@@ -1,0 +1,132 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.main--services {
+    .benefits {
+        &__cards {
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+            counter-reset: card;
+        }
+
+        &__card {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            padding-bottom: 64px;
+            gap: 20px;
+            counter-increment: card;
+            border-bottom: 1px solid var(--dark-grey);
+
+            &:nth-child(odd) {
+                flex-direction: row;
+            }
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+
+                .benefits__card-inner {
+                    &:first-child {
+                        padding-left: 88px;
+                        padding-right: 0;
+                        border-left: 1px solid var(--dark-grey);
+
+                        .benefits__card-thumb::after {
+                            right: auto;
+                            left: 40px;
+                        }
+                    }
+
+                    &:last-child {
+                        padding-left: 0;
+                        padding-right: 68px;
+                    }
+                }
+            }
+
+            &-inner {
+                width: 100%;
+
+                &:first-child {
+                    padding-right: 88px;
+                    height: 580px;
+                    // height: 0; // FOR SCROLL ANIM
+                    overflow: hidden;
+                    transition: height 0.5s linear;
+                    border-right: 1px solid var(--dark-grey);
+
+                    .benefits__card-thumb {
+                        max-width: 652px;
+                        height: 100%;
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            display: inline-flex;
+                            position: absolute;
+                            width: 64px;
+                            height: 64px;
+                            bottom: 40px;
+                            right: 40px;
+                            background: var(--accent-color);
+                        }
+                    }
+                }
+
+                &:last-child {
+                    display: grid;
+                    // grid-template-rows: 0fr; // FOR SCROLL ANIM
+                    transition: grid-template-rows 0.5s linear;
+                    padding-left: 68px;
+                }
+            }
+
+            &-thumb {
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+                max-width: 652px;
+            }
+
+            &-row {
+                &:last-child {
+                    margin-top: auto;
+                }
+            }
+
+            &-title {
+                font: 500 40px / 100% var(--ff-primary);
+                text-transform: uppercase;
+                letter-spacing: -1px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                &::before {
+                    content: counter(card, decimal-leading-zero);
+                    font: 500 32px / 100% var(--ff-primary);
+                    text-transform: uppercase;
+                    color: var(--accent-color);
+                }
+            }
+
+            &-descr {
+                font: 400 18px / 160% var(--ff-secondary);
+                margin-bottom: 32px;
+                color: var(--dark-grey);
+            }
+        }
+    }
+}

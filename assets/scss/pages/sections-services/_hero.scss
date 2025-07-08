@@ -1,0 +1,68 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.main--services {
+    .hero {
+        padding-top: 84px;
+        position: relative;
+        max-width: 2000px;
+        overflow: hidden;
+        margin: 0 auto var(--section-padding);
+
+        .container--right {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        &__video {
+            height: 880px;
+            max-width: 100%;
+            max-width: 950px;
+            width: 100%;
+
+            video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__title {
+            margin-bottom: 32px;
+        }
+
+        &__about {
+            padding-top: 112px;
+            display: flex;
+            flex-direction: column;
+            max-width: 680px;
+            border-bottom: 1px solid var(--dark-grey);
+
+            &-row {
+                &:last-child {
+                    margin-top: auto;
+                    padding-bottom: 82px;
+                }
+            }
+        }
+
+        &__link {
+            span {
+                svg {
+                    perspective: 1000px;
+                    transform: rotate(90deg) rotateY(360deg);
+                }
+            }
+
+            @include hover {
+                span {
+                    svg {
+                        transform: rotate(135deg) rotateY(180deg);
+                    }
+                }
+            }
+        }
+    }
+}

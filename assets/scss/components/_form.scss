@@ -67,7 +67,7 @@
 
                 span {
                     display: block;
-                    @include transitions(0.5s);
+                    @include transitions(0.3s);
                     &:last-child {
                         position: absolute;
                         left: 0;
@@ -94,7 +94,7 @@
                 img {
                     width: 100%;
                     height: 100%;
-                    @include transitions(0.5s);
+                    @include transitions(0.3s);
 
                     &:last-child {
                         position: absolute;
