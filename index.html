@@ -208,7 +208,7 @@
                 </a>
                 <div class="header__info">
                     <div class="header__call">
-                        <a href="javascript: void(0)">замовити дзвінок</a>
+                        <a href="javascript: void(0)" class="js-open-modal">замовити дзвінок</a>
                         <a href="tel:+380508136682">
                             +38 (050) 813 66 82
                         </a>
@@ -229,6 +229,74 @@
             </div>
         </div>
     </header>
+    <div class="feedback-modal js-feedback-modal">
+        <div class="feedback-modal__wrapper">
+            <div class="form-box">
+                <button class="form-box__close js-close-modal">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_313_3256)">
+                            <path d="M21.875 6.125L6.125 21.875" stroke="#FAF8FF" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M21.875 21.875L6.125 6.125" stroke="#FAF8FF" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_313_3256">
+                                <rect width="28" height="28" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+                <h3 class="form-box__title">
+                    Передзвоніть мені
+                </h3>
+                <p class="form-box__subtitle">
+                    Звертаємо вашу увагу, що режим роботи служби підтримки з 10:00 до 17:00 (Пн.-Пт.). Сб.-Нд.: вихідні
+                    дні
+                </p>
+                <form class="form-box__review js-form">
+                    <div class="form-box__field">
+                        <label class="form-box__label" for="nameFieldModal">Як до вас звертатись?</label>
+                        <input class="form-box__input" type="text" name="name" id="nameFieldModal"
+                            placeholder="Ім’я та Прізвище" />
+                    </div>
+
+                    <div class="form-box__field">
+                        <label class="form-box__label" for="phoneFieldModal">Телефон</label>
+                        <input class="form__item-input" type="tel" name="phone" id="phoneFieldModal" autocomplete="tel"
+                            placeholder="Ваш номер для зв’язку" />
+                    </div>
+
+                    <div class="form-box__check">
+                        <input class="form-box__radio" type="checkbox" id="checkBoxModal" />
+                        <label class="form-box__check-label" for="checkBoxModal">
+                            <p class="form-box__check-text">
+                                Я погоджуюсь з
+                                <a href="#">Умовами</a> та
+                                <a href="#">Політикою конфіденційності</a>
+                            </p>
+                        </label>
+                    </div>
+                    <button class="form-box__submit" type="submit">
+                        <div class="text-wrapper">
+                            <div class="text-wrapper__items">
+                                <span>надіслати</span>
+                                <span>надіслати</span>
+                            </div>
+                        </div>
+                        <div class="img-wrapper">
+                            <div class="img-wrapper__items">
+                                <img width="24" height="24" src="./assets/images/icons/ico-arrow-right.svg"
+                                    alt="Icon" />
+                                <img width="24" height="24" src="./assets/images/icons/ico-arrow-right.svg"
+                                    alt="Icon" />
+                            </div>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
     <main class="main main--home">
         <section class="hero">
             <div class="container">
@@ -260,6 +328,18 @@
                             ми змінюємо вигляд міста створюючи практичні
                             рішення
                         </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__inner">
+                <div class="hero__rect">
+                    <canvas width="800" height="500" id="heroCanvas"></canvas>
+                    <div class="hero__video">
+                        <video class="js-video" width="950" height="880" poster="./assets/images/bg-hero.jpg" muted
+                            autoplay loop playsinline>
+                            <source data-src="./assets/video/vid_main.mp4" type="video/mp4">
+                            <p>Your browser does not support the video tag.</p>
+                        </video>
                     </div>
                 </div>
             </div>
@@ -391,6 +471,7 @@
             </div>
         </section>
         <section class="projects">
+            <img class="bg-thumbnail" src="./assets/images/bg-projects.jpg" alt="BG-thumb">
             <div class="container">
                 <div class="projects__content">
                     <div class="projects__head">
@@ -525,7 +606,7 @@
             </div>
             <div class="partners__content">
                 <div class="container">
-                    <div class="partners__gall swiper">
+                    <div class="partners__gall partners-swiper swiper">
                         <div class="partners__gall-wrapper swiper-wrapper">
                             <div class="partners__gall-slide swiper-slide">
                                 <div class="gall-box">
@@ -563,6 +644,7 @@
             </div>
         </section>
         <section class="form">
+            <img src="./assets/images/bg-form.jpg" alt="BG-thumb" class="bg-thumbnail">
             <div class="container">
                 <div class="form__content">
                     <h2 class="form__title h2">створюйте разом з нами</h2>

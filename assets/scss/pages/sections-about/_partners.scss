@@ -1,0 +1,38 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.main--about {
+    .partners {
+        overflow: hidden;
+        margin-bottom: var(--section-padding);
+
+        &__head {
+            padding-bottom: 48px;
+            margin-bottom: 48px;
+            border-bottom: 1px solid rgba(7, 7, 7, 0.2);
+        }
+
+        &__title {
+            max-width: 816px;
+        }
+
+        &__cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+        }
+
+        &__card {
+            padding: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(7, 7, 7, 0.2);
+
+            img {
+                mix-blend-mode: multiply;
+                width: 229px;
+            }
+        }
+    }
+}

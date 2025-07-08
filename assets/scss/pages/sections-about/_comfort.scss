@@ -1,0 +1,112 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.main--about {
+    .comfort {
+        margin-bottom: 48px;
+        .container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        &__col {
+            width: 100%;
+
+            &:first-child {
+                max-width: 630px;
+                position: relative;
+
+                &::after {
+                    pointer-events: none;
+                    content: '';
+                    position: absolute;
+                    width: 630px;
+                    height: 630px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: url('../images/bg-logo.svg') no-repeat center
+                        center / cover;
+                }
+            }
+
+            &:last-child {
+                max-width: 730px;
+            }
+        }
+
+        &__subtitle {
+            font: 500 32px / 110% var(--ff-primary);
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 32px;
+        }
+
+        &__title {
+            margin-bottom: 32px;
+        }
+
+        &__animation {
+            max-width: 340px;
+            lottie-player {
+                background: transparent;
+                width: 100%;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &__num {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .num-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            justify-content: space-between;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--dark-grey);
+
+            &__col {
+                &:last-child {
+                    max-width: 496px;
+                }
+            }
+
+            &__val {
+                font: 500 72px / 100% var(--ff-primary);
+                text-transform: uppercase;
+                letter-spacing: -1px;
+                display: inline-flex;
+                align-items: flex-end;
+                gap: 24px;
+
+                &::before {
+                    content: '';
+                    display: inline-flex;
+                    width: 18px;
+                    height: 18px;
+                    margin-bottom: 15px;
+                    background: var(--accent-color);
+                }
+            }
+
+            &__title {
+                font: 500 32px / 100% var(--ff-primary);
+                text-transform: uppercase;
+                letter-spacing: -1px;
+                margin-bottom: 12px;
+            }
+
+            &__text {
+                font: 400 18px / 160% var(--ff-secondary);
+                color: var(--dark-grey);
+            }
+        }
+    }
+}

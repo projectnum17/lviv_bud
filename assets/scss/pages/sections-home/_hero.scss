@@ -1,30 +1,62 @@
 @use '../../base/media' as *;
 @use '../../base/mixins' as *;
+:root {
+    --vh: 1vh;
+    --section-rect-pad-top: calc(5rem + 2.5rem);
+    --section-rect-pad-bottom: calc(5rem + 2.5rem);
+}
 
 .main--home {
     .hero {
-        background: url('../images/bg-hero.jpg') no-repeat center center / cover;
-        min-height: 100vh;
+        min-height: calc(200 * var(--vh));
         position: relative;
+        --section-rect-inner-min-height: calc(
+            (100 * var(--vh)) - var(--section-rect-pad-top) -
+                var(--section-rect-pad-bottom)
+        );
 
-        &::after {
-            content: '';
+        canvas {
+            pointer-events: none;
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             z-index: 1;
-            background: url('../images/substract.png') no-repeat center center /
-                cover;
-        }
-
-        @include media('mobile') {
-            min-height: 100svh;
         }
 
         .container {
             position: relative;
             z-index: 2;
+        }
+
+        &__inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__rect {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100 * var(--vh));
+            overflow: hidden;
+        }
+
+        &__video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+
+            video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         &__content {

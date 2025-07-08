@@ -1,0 +1,75 @@
+@use '../base/media' as *;
+@use '../base/mixins' as *;
+
+.partners {
+    margin-bottom: var(--section-padding);
+    &__head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 48px;
+    }
+
+    &__title {
+        max-width: 816px;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        &-btn {
+            padding: 15px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(7, 7, 7, 0.2);
+            color: var(--black-color);
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                transform: translate(-100%, 100%);
+                z-index: -1;
+                background: var(--accent-color);
+                @include transitions(0.3s);
+            }
+
+            @include transitions(0.3s);
+            @include hover {
+                border-color: var(--accent-color);
+                color: var(--white-color);
+
+                &::after {
+                    transform: translate(0%, 0%);
+                }
+            }
+
+            svg {
+                width: 32px;
+                height: 32px;
+                display: inline-flex;
+                flex-shrink: 0;
+                color: inherit;
+                @include transitions(0.3s);
+            }
+        }
+    }
+
+    &__content {
+        padding-block: 48px;
+        border-top: 1px solid rgba(7, 7, 7, 0.2);
+        border-bottom: 1px solid rgba(7, 7, 7, 0.2);
+    }
+
+    .gall-box {
+        width: 100%;
+        padding: 11px 54px;
+        border: 1px solid rgba(7, 7, 7, 0.2);
+    }
+}

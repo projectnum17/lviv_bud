@@ -5,9 +5,9 @@
     .form {
         position: relative;
         padding-block: var(--section-padding);
-        background: url('../images/bg-blog.jpg') no-repeat center center / cover;
 
         &::before {
+            z-index: 2;
             content: '';
             position: absolute;
             inset: 0;

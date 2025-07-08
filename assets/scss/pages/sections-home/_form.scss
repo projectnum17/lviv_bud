@@ -4,8 +4,6 @@
 .main--home {
     .form {
         min-height: 100vh;
-        background: #fff url('../images/bg-form.jpg') no-repeat center center /
-            cover;
         position: relative;
 
         @include media('mobile') {

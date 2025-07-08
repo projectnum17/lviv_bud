@@ -208,7 +208,7 @@
                 </a>
                 <div class="header__info">
                     <div class="header__call">
-                        <a href="javascript: void(0)">замовити дзвінок</a>
+                        <a href="javascript: void(0)" class="js-open-modal">замовити дзвінок</a>
                         <a href="tel:+380508136682">
                             +38 (050) 813 66 82
                         </a>
@@ -229,6 +229,74 @@
             </div>
         </div>
     </header>
+    <div class="feedback-modal js-feedback-modal">
+        <div class="feedback-modal__wrapper">
+            <div class="form-box">
+                <button class="form-box__close js-close-modal">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_313_3256)">
+                            <path d="M21.875 6.125L6.125 21.875" stroke="#FAF8FF" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M21.875 21.875L6.125 6.125" stroke="#FAF8FF" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_313_3256">
+                                <rect width="28" height="28" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+                <h3 class="form-box__title">
+                    Передзвоніть мені
+                </h3>
+                <p class="form-box__subtitle">
+                    Звертаємо вашу увагу, що режим роботи служби підтримки з 10:00 до 17:00 (Пн.-Пт.). Сб.-Нд.: вихідні
+                    дні
+                </p>
+                <form class="form-box__review js-form">
+                    <div class="form-box__field">
+                        <label class="form-box__label" for="nameFieldModal">Як до вас звертатись?</label>
+                        <input class="form-box__input" type="text" name="name" id="nameFieldModal"
+                            placeholder="Ім’я та Прізвище" />
+                    </div>
+
+                    <div class="form-box__field">
+                        <label class="form-box__label" for="phoneFieldModal">Телефон</label>
+                        <input class="form__item-input" type="tel" name="phone" id="phoneFieldModal" autocomplete="tel"
+                            placeholder="Ваш номер для зв’язку" />
+                    </div>
+
+                    <div class="form-box__check">
+                        <input class="form-box__radio" type="checkbox" id="checkBoxModal" />
+                        <label class="form-box__check-label" for="checkBoxModal">
+                            <p class="form-box__check-text">
+                                Я погоджуюсь з
+                                <a href="#">Умовами</a> та
+                                <a href="#">Політикою конфіденційності</a>
+                            </p>
+                        </label>
+                    </div>
+                    <button class="form-box__submit" type="submit">
+                        <div class="text-wrapper">
+                            <div class="text-wrapper__items">
+                                <span>надіслати</span>
+                                <span>надіслати</span>
+                            </div>
+                        </div>
+                        <div class="img-wrapper">
+                            <div class="img-wrapper__items">
+                                <img width="24" height="24" src="./assets/images/icons/ico-arrow-right.svg"
+                                    alt="Icon" />
+                                <img width="24" height="24" src="./assets/images/icons/ico-arrow-right.svg"
+                                    alt="Icon" />
+                            </div>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
     <main class="main main--contact">
         <section class="content">
             <div class="container--right">
@@ -314,27 +382,27 @@
                 </a>
             </div>
         </section>
-        <section class="form">
+        <section class="assistant">
             <div class="container">
-                <div class="form__col">
-                    <div class="form__content">
-                        <h2 class="h2 form__title">
+                <div class="assistant__col">
+                    <div class="assistant__content">
+                        <h2 class="h2 assistant__title">
                             потрібна консультація?
                         </h2>
-                        <div class="form__assistant">
-                            <div class="form__assistant-preview">
+                        <div class="assistant__human">
+                            <div class="assistant__human-preview">
                                 <img loading="lazy" width="212" height="216" src="./assets/images/assistant.jpg"
                                     alt="Thumbnail">
                             </div>
-                            <div class="form__assistant-content">
-                                <p class="form__assistant-text">
+                            <div class="assistant__human-content">
+                                <p class="assistant__human-text">
                                     З вами зв’яжеться і відповість на ваші запитання
                                 </p>
-                                <p class="form__assistant-name">вікторія</p>
-                                <p class="form__assistant-job">
+                                <p class="assistant__human-name">вікторія</p>
+                                <p class="assistant__human-job">
                                     Менеджер компанії Lviv Bud
                                 </p>
-                                <div class="form__assistant-cta">
+                                <div class="assistant__human-cta">
                                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M14 34L34 14" stroke="#343434" stroke-width="2" stroke-linecap="round"
