@@ -9,11 +9,12 @@
         font: 400 18px / 100% var(--ff-secondary);
         text-transform: uppercase;
         letter-spacing: 1px;
-        padding: 21px 47px;
+        padding: 22px 47px;
         border-width: 1px 0px 1px 1px;
         border-style: solid;
         position: relative;
         border-color: var(--black-color);
+        @include transitions (.3s);
 
         &::before {
             content: '';
@@ -37,7 +38,7 @@
     .img-wrapper {
         overflow: hidden;
         position: relative;
-        padding: 19px;
+        padding: 20px;
         display: flex;
         align-items: center;
         justify-content: center;

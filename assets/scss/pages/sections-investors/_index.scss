@@ -1,19 +1,13 @@
 @forward 'hero';
-@forward 'details';
+@forward 'advantages';
+@forward 'preview';
 
-.main--services-item {
-    .partners {
-        &__title {
-            max-width: 920px;
-        }
-    }
-
+.main--investors {
     .assistant {
         .form-box {
             box-shadow: none;
             padding: 0;
             max-width: 100%;
-
             &__field {
                 max-width: 515px;
             }

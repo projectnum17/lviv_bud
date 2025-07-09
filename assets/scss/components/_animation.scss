@@ -1,0 +1,11 @@
+.animation--simple {
+    opacity: 0;
+    transform: translateY(10%);
+    transition: 0.5s linear;
+    will-change: transform, opacity;
+
+    &._animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

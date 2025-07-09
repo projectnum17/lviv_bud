@@ -9,6 +9,7 @@ body {
 }
 
 body {
+    overflow-anchor: none;
     font: 400 16px/1.5 var(--ff-secondary);
     color: var(--black-color);
     background: var(--light-grey);
@@ -16,6 +17,7 @@ body {
     &:not(:has(.main--home)) {
         .header {
             position: sticky;
+            overflow: visible;
             top: 0;
             background: var(--light-grey);
             color: var(--black-color);

@@ -77,6 +77,20 @@ const slidersConfig = () => {
             loop: true,
             centeredSlides: true,
         });
+
+        createSlider({
+            sectionSelector: '.advantages',
+            sliderSelector: '.advantages-swiper',
+            slidesPerView: 1,
+            spaceBetween: 40,
+            loop: true,
+            extraOptions: {
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true,
+                },
+            },
+        });
     };
 
     slidersConfig();

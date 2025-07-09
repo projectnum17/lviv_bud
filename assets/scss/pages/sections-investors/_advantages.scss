@@ -1,0 +1,148 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.main--investors {
+    .advantages {
+        margin-bottom: var(--section-padding);
+
+        .container {
+            display: flex;
+            align-items: flex-start;
+            gap: 33px;
+            justify-content: space-between;
+        }
+        &__col {
+            &:first-child {
+                max-width: 455px;
+            }
+
+            &:last-child {
+                position: relative;
+                width: 100%;
+                max-width: 992px;
+            }
+        }
+
+        &__title {
+            margin-bottom: 40px;
+        }
+
+        &__link {
+            margin-bottom: 44px;
+            .text-wrapper {
+                padding: 22px 27px;
+            }
+        }
+
+        &__animation {
+            max-width: 308px;
+            lottie-player {
+                background: transparent;
+                width: 100%;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &__gall {
+            width: 100%;
+            counter-reset: card;
+        }
+
+        &__nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            position: absolute;
+            z-index: 5;
+            bottom: 0;
+            left: 57%;
+
+            &-btn {
+                padding: 15px;
+                position: relative;
+                overflow: hidden;
+                border: 1px solid rgba(7, 7, 7, 0.2);
+                color: var(--black-color);
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: translate(-100%, 100%);
+                    z-index: -1;
+                    background: var(--accent-color);
+                    @include transitions(0.3s);
+                }
+
+                @include transitions(0.3s);
+                @include hover {
+                    border-color: var(--accent-color);
+                    color: var(--white-color);
+
+                    &::after {
+                        transform: translate(0%, 0%);
+                    }
+                }
+
+                svg {
+                    width: 32px;
+                    height: 32px;
+                    display: inline-flex;
+                    flex-shrink: 0;
+                    color: inherit;
+                    @include transitions(0.3s);
+                }
+            }
+        }
+
+        .advantages-box {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+
+            &__thumb {
+                max-width: 496px;
+                width: 100%;
+                height: 620px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &__info {
+                max-width: 423px;
+            }
+
+            &__title {
+                font: 500 48px / 110% var(--ff-primary);
+                text-transform: uppercase;
+                letter-spacing: -1px;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                counter-increment: card;
+                margin-bottom: 24px;
+
+                &::before {
+                    content: counter(card, decimal-leading-zero);
+                    font: 500 24px / 100% var(--ff-primary);
+                    text-transform: uppercase;
+                    color: var(--accent-color);
+                }
+            }
+
+            &__text {
+                font: 400 18px / 160% var(--ff-secondary);
+                color: var(--dark-grey);
+            }
+        }
+    }
+}

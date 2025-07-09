@@ -11,6 +11,7 @@ import videoObserver from './modules/videoObserver.js';
 import canvasDeco from './modules/canvasDeco.js';
 import progressBar from './modules/progressBar.js';
 import tabs from './modules/tabs.js';
+import animationObserver from './modules/animationObserver.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     headerFlow();
@@ -24,4 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
     canvasDeco();
     progressBar();
     tabs();
+    animationObserver();
 });
