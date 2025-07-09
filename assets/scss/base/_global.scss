@@ -4,7 +4,6 @@
 
 html,
 body {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -16,6 +15,8 @@ body {
 
     &:not(:has(.main--home)) {
         .header {
+            position: sticky;
+            top: 0;
             background: var(--light-grey);
             color: var(--black-color);
             border-color: #dfdfdf;

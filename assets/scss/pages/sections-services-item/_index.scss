@@ -1,0 +1,18 @@
+@forward 'hero';
+@forward 'details';
+
+.main--services-item {
+    .partners {
+        &__title {
+            max-width: 920px;
+        }
+    }
+
+    .assistant {
+        .form-box {
+            box-shadow: none;
+            padding: 0;
+            max-width: 100%;
+        }
+    }
+}

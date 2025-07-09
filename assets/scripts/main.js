@@ -8,6 +8,9 @@ import formData from './modules/formData.js';
 import projectsFilter from './modules/projectsFilter.js';
 import blogCards from './modules/blogCards.js';
 import videoObserver from './modules/videoObserver.js';
+import canvasDeco from './modules/canvasDeco.js';
+import progressBar from './modules/progressBar.js';
+import tabs from './modules/tabs.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     headerFlow();
@@ -18,4 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     projectsFilter();
     blogCards();
     videoObserver();
+    canvasDeco();
+    progressBar();
+    tabs();
 });

@@ -1,0 +1,99 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.main--services-item {
+    .hero {
+        position: relative;
+        max-width: 1920px;
+        overflow: hidden;
+        margin: 0 auto var(--section-padding);
+
+        .container--right {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 20px;
+            height: 880px;
+            overflow: scroll;
+
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &__cta {
+            width: max-content;
+            margin-bottom: 40px;
+
+            @include hover {
+                span {
+                    &:first-child {
+                        svg {
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        &__about {
+            padding-top: 112px;
+            display: flex;
+            flex-direction: column;
+            max-width: 648px;
+        }
+
+        &__thumb {
+            height: 880px;
+            max-width: 950px;
+            width: 100%;
+            position: sticky;
+            top: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__title {
+            margin-bottom: 80px;
+        }
+
+        &__cards {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            counter-reset: card;
+        }
+
+        &__card {
+            counter-increment: card;
+            display: flex;
+            align-items: flex-start;
+            gap: 36px;
+
+            &::before {
+                content: counter(card, decimal-leading-zero);
+                font: 500 32px / 100% var(--ff-primary);
+                text-transform: uppercase;
+                color: var(--accent-color);
+            }
+
+            &-title {
+                font: 500 24px / 110% var(--ff-primary);
+                text-transform: uppercase;
+                margin-bottom: 12px;
+            }
+
+            &-text {
+                font: 400 18px / 160% var(--ff-secondary);
+                color: var(--dark-grey);
+            }
+        }
+    }
+}

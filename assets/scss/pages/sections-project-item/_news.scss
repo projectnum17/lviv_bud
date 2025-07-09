@@ -1,0 +1,20 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.main--project-item {
+    .news {
+        margin-bottom: var(--section-padding);
+        &__title {
+            margin-bottom: 40px;
+            font: 500 48px / 110% var(--ff-primary);
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        &__cards {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 40px;
+        }
+    }
+}

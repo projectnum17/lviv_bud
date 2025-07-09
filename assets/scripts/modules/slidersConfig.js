@@ -60,6 +60,23 @@ const slidersConfig = () => {
             //     },
             // },
         });
+
+        createSlider({
+            sectionSelector: '.flats',
+            sliderSelector: '.flats-swiper',
+            slidesPerView: 4,
+            spaceBetween: 40,
+            loop: true,
+        });
+
+        createSlider({
+            sectionSelector: '.details',
+            sliderSelector: '.details-swiper',
+            slidesPerView: 3,
+            spaceBetween: 40,
+            loop: true,
+            centeredSlides: true,
+        });
     };
 
     slidersConfig();

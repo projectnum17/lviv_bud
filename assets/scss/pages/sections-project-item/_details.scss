@@ -1,0 +1,89 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.main--project-item {
+    .details {
+        margin-bottom: var(--section-padding);
+        &__head {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 46px;
+        }
+
+        &__title {
+            font: 500 48px / 110% var(--ff-primary);
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            max-width: 730px;
+        }
+
+        &__nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            &-btn {
+                padding: 15px;
+                position: relative;
+                overflow: hidden;
+                border: 1px solid rgba(7, 7, 7, 0.2);
+                color: var(--black-color);
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    transform: translate(-100%, 100%);
+                    z-index: -1;
+                    background: var(--accent-color);
+                    @include transitions(0.3s);
+                }
+
+                @include transitions(0.3s);
+                @include hover {
+                    border-color: var(--accent-color);
+                    color: var(--white-color);
+
+                    &::after {
+                        transform: translate(0%, 0%);
+                    }
+                }
+
+                svg {
+                    width: 32px;
+                    height: 32px;
+                    display: inline-flex;
+                    flex-shrink: 0;
+                    color: inherit;
+                    @include transitions(0.3s);
+                }
+            }
+        }
+
+        &__content {
+            padding-block: 40px;
+            border-top: 1px solid rgba(7, 7, 7, 0.2);
+            border-bottom: 1px solid rgba(7, 7, 7, 0.2);
+        }
+
+        &__gall {
+            max-width: 1920px;
+            margin: 0 auto;
+
+            &-thumb {
+                width: 100%;
+                height: 548px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
