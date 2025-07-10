@@ -10,6 +10,7 @@
 
     @include media('mobile') {
         gap: 22px;
+        padding-bottom: 22px;
     }
 
     &__status {
@@ -171,7 +172,7 @@
         }
 
         @include media('mobile') {
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 14px;
         }
     }
@@ -186,7 +187,7 @@
         }
 
         @include media('mobile') {
-            font-size: 16px;
+            font-size: 14px;
         }
     }
 
