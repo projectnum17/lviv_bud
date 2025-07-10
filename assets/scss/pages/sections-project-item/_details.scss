@@ -10,6 +10,14 @@
             gap: 20px;
             justify-content: space-between;
             margin-bottom: 46px;
+
+            @include media('tablet') {
+                margin-bottom: 35px;
+            }
+
+            @include media('mobile') {
+                margin-bottom: 24px;
+            }
         }
 
         &__title {
@@ -17,6 +25,13 @@
             text-transform: uppercase;
             letter-spacing: -1px;
             max-width: 730px;
+
+            @include media('tablet') {
+                font-size: 32px;
+            }
+            @include media('mobile') {
+                font-size: 24px;
+            }
         }
 
         &__nav {
@@ -24,12 +39,24 @@
             align-items: center;
             gap: 24px;
 
+            @include media('tablet') {
+                gap: 12px;
+            }
+
+            @include media('mobile') {
+                display: none;
+            }
+
             &-btn {
                 padding: 15px;
                 position: relative;
                 overflow: hidden;
                 border: 1px solid rgba(7, 7, 7, 0.2);
                 color: var(--black-color);
+
+                @include media('tablet') {
+                    padding: 10px;
+                }
 
                 &::after {
                     content: '';
@@ -61,6 +88,11 @@
                     flex-shrink: 0;
                     color: inherit;
                     @include transitions(0.3s);
+
+                    @include media('tablet') {
+                        width: 24px;
+                        height: 24px;
+                    }
                 }
             }
         }
@@ -69,6 +101,13 @@
             padding-block: 40px;
             border-top: 1px solid rgba(7, 7, 7, 0.2);
             border-bottom: 1px solid rgba(7, 7, 7, 0.2);
+
+            @include media('tablet') {
+                padding-block: 30px;
+            }
+            @include media('mobile') {
+                padding-block: 20px;
+            }
         }
 
         &__gall {
@@ -78,6 +117,14 @@
             &-thumb {
                 width: 100%;
                 height: 548px;
+
+                @include media('tablet') {
+                    height: 450px;
+                }
+                @include media('mobile') {
+                    height: 350px;
+                }
+
                 img {
                     width: 100%;
                     height: 100%;

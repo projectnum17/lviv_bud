@@ -10,6 +10,15 @@
             text-transform: uppercase;
             margin-bottom: 40px;
             letter-spacing: -1px;
+
+            @include media('tablet') {
+                font-size: 32px;
+                margin-bottom: 30px;
+            }
+            @include media('mobile') {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
         }
 
         &__map {
@@ -17,6 +26,13 @@
             border: 1px solid #dfdfdf;
             background: #fff;
             position: relative;
+
+            @include media('tablet') {
+                padding: 15px;
+            }
+            @include media('mobile') {
+                padding: 12px;
+            }
 
             img {
                 width: 100%;
@@ -68,6 +84,13 @@
                 background: url('../images/icons/ico-pin.svg') no-repeat center
                     center;
                 @include transitions(0.3s);
+            }
+
+            @include media('tablet') {
+                height: 450px;
+            }
+            @include media('mobile') {
+                height: 350px;
             }
         }
     }
