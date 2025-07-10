@@ -6,13 +6,26 @@
         position: relative;
         max-width: 1920px;
         overflow: hidden;
+        padding-top: 82px;
         margin: 0 auto var(--section-padding);
+
+        @include media('tablet') {
+            padding-top: 77px;
+        }
+
+        @include media('mobile') {
+            padding-top: 57px;
+        }
 
         .container--right {
             display: flex;
             align-items: stretch;
             justify-content: space-between;
             gap: 20px;
+
+            @include media('tablet') {
+                flex-direction: column-reverse;
+            }
         }
 
         &__video {
@@ -20,6 +33,18 @@
             max-width: 100%;
             max-width: 950px;
             width: 100%;
+
+            @include media('tablet') {
+                max-width: 100%;
+                width: 100%;
+                height: 440px;
+                position: relative;
+                top: auto;
+            }
+
+            @include media('mobile') {
+                height: 350px;
+            }
 
             video {
                 width: 100%;
@@ -30,11 +55,24 @@
 
         &__title {
             margin-bottom: 32px;
+
+            @include media('mobile') {
+                margin-bottom: 20px;
+            }
         }
 
         &__descr {
             font: 400 18px / 160% var(--ff-secondary);
             color: var(--dark-grey);
+
+            @include media('tablet') {
+                margin-bottom: 35px;
+            }
+
+            @include media('mobile') {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
         }
 
         &__about {
@@ -44,10 +82,27 @@
             max-width: 680px;
             border-bottom: 1px solid var(--dark-grey);
 
+            @include media('desktop') {
+                max-width: 520px;
+            }
+
+            @include media('tablet') {
+                padding: 0 20px 0;
+                max-width: 100%;
+            }
+
             &-row {
                 &:last-child {
                     margin-top: auto;
                     padding-bottom: 82px;
+
+                    @include media('tablet') {
+                        padding-bottom: 64px;
+                    }
+
+                    @include media('mobile') {
+                        padding-bottom: 32px;
+                    }
                 }
             }
         }

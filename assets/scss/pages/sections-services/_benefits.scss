@@ -3,11 +3,22 @@
 
 .main--services {
     .benefits {
+        @include media('tablet') {
+            margin-bottom: 32px;
+        }
         &__cards {
             display: flex;
             flex-direction: column;
             gap: 64px;
             counter-reset: card;
+
+            @include media('tablet') {
+                gap: 32px;
+            }
+
+            @include media('mobile') {
+                gap: 20px;
+            }
         }
 
         &__card {
@@ -18,6 +29,14 @@
             gap: 20px;
             counter-increment: card;
             position: relative;
+
+            @include media('tablet') {
+                gap: 0;
+                padding-bottom: 35px;
+            }
+            @include media('mobile') {
+                padding-bottom: 20px;
+            }
 
             &::after {
                 content: '';
@@ -33,6 +52,10 @@
             &:nth-child(odd) {
                 flex-direction: row;
 
+                @include media('mobile') {
+                    flex-direction: column;
+                }
+
                 .benefits__card-inner {
                     &::before {
                         right: 0;
@@ -44,6 +67,10 @@
                 flex-direction: row-reverse;
                 gap: 0;
 
+                @include media('mobile') {
+                    flex-direction: column;
+                }
+
                 .benefits__card-inner {
                     &::before {
                         left: 0;
@@ -52,15 +79,33 @@
                         padding-left: 88px;
                         padding-right: 0;
 
+                        @include media('tablet') {
+                            padding-left: 20px;
+                        }
+                        @include media('mobile') {
+                            padding-left: 0;
+                        }
+
                         .benefits__card-thumb::after {
                             right: auto;
                             left: 40px;
+
+                            @include media('tablet') {
+                                left: 20px;
+                            }
+                            @include media('mobile') {
+                                left: 15px;
+                            }
                         }
                     }
 
                     &:last-child {
                         padding-left: 0;
                         padding-right: 68px;
+
+                        @include media('tablet') {
+                            padding-right: 20px;
+                        }
                     }
                 }
             }
@@ -68,12 +113,29 @@
             &-inner {
                 width: 100%;
 
+                @include media('tablet') {
+                    width: 50%;
+                }
+
+                @include media('mobile') {
+                    width: 100%;
+                }
+
                 &:first-child {
                     padding-right: 88px;
                     height: 580px;
                     overflow: hidden;
                     transition: height 0.7s linear;
                     position: relative;
+
+                    @include media('tablet') {
+                        padding-right: 20px;
+                    }
+
+                    @include media('mobile') {
+                        height: 350px;
+                        padding-right: 0;
+                    }
 
                     &::before {
                         content: '';
@@ -84,6 +146,10 @@
                         position: absolute;
                         background: var(--dark-grey);
                         @include transitions(0.7s);
+
+                        @include media('mobile') {
+                            display: none;
+                        }
                     }
 
                     .benefits__card-thumb {
@@ -93,6 +159,10 @@
                         display: grid;
                         grid-template-rows: 0fr;
                         @include transitions(0.7s);
+
+                        @include media('mobile') {
+                            max-width: 100%;
+                        }
 
                         &::after {
                             content: '';
@@ -105,12 +175,32 @@
                             transform: scale(0);
                             background: var(--accent-color);
                             @include transitions(0.7s);
+
+                            @include media('tablet') {
+                                bottom: 20px;
+                                right: 20px;
+                                width: 45px;
+                                height: 45px;
+                            }
+                            @include media('mobile') {
+                                bottom: 15px;
+                                right: 15px;
+                                width: 35px;
+                                height: 35px;
+                            }
                         }
                     }
                 }
 
                 &:last-child {
                     padding-left: 68px;
+
+                    @include media('tablet') {
+                        padding-left: 20px;
+                    }
+                    @include media('mobile') {
+                        padding-left: 0px;
+                    }
                 }
             }
 
@@ -150,6 +240,16 @@
                 flex-direction: column;
                 gap: 20px;
 
+                @include media('mobile') {
+                    flex-direction: row;
+                    padding-top: 20px;
+                    align-items: flex-end;
+                    font-size: 20px;
+                    line-height: 120%;
+                    gap: 12px;
+                    margin-bottom: 20px;
+                }
+
                 &::before {
                     content: counter(card, decimal-leading-zero);
                     font: 500 32px / 100% var(--ff-primary);
@@ -162,6 +262,11 @@
                 font: 400 18px / 160% var(--ff-secondary);
                 margin-bottom: 32px;
                 color: var(--dark-grey);
+
+                @include media('mobile') {
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                }
             }
 
             &._animated {
