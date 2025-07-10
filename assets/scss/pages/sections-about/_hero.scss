@@ -113,6 +113,11 @@
             gap: 12px;
             color: var(--dark-grey);
 
+            @include media('mobile') {
+                font-size: 14px;
+                gap: 8px;
+            }
+
             &::before {
                 content: '';
                 display: inline-flex;
@@ -136,6 +141,7 @@
 
             @include media('mobile') {
                 font-size: 24px;
+                max-width: 100%;
             }
         }
     }

@@ -8,6 +8,14 @@
             display: flex;
             flex-direction: column;
             gap: 64px;
+
+            @include media('tablet') {
+                gap: 45px;
+            }
+
+            @include media('mobile') {
+                gap: 32px;
+            }
         }
 
         &__card {
@@ -18,12 +26,25 @@
             justify-content: space-between;
             border-bottom: 1px solid var(--dark-grey);
 
+            @include media('tablet') {
+                padding-bottom: 45px;
+            }
+
+            @include media('mobile') {
+                flex-direction: column-reverse;
+                padding-bottom: 32px;
+            }
+
             &-info {
                 display: flex;
                 flex-direction: column;
-                transform: translateY(-10%);
+                transform: translateY(-30px);
                 opacity: 0;
                 @include transitions(0.7s);
+
+                @include media('mobile') {
+                    transform: translateY(30px);
+                }
             }
 
             &-location {
@@ -31,6 +52,13 @@
                 text-transform: uppercase;
                 letter-spacing: -1px;
                 margin-bottom: 24px;
+
+                @include media('tablet') {
+                    font-size: 18px;
+                }
+                @include media('mobile') {
+                    font-size: 16px;
+                }
             }
 
             &-title {
@@ -38,6 +66,18 @@
                 text-transform: uppercase;
                 letter-spacing: -1px;
                 margin-bottom: 40px;
+
+                @include media('desktop') {
+                    font-size: 40px;
+                }
+                @include media('tablet') {
+                    font-size: 32px;
+                    margin-bottom: 35px;
+                }
+                @include media('mobile') {
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                }
             }
 
             &-list {
@@ -47,6 +87,14 @@
                 gap: 40px;
                 text-transform: uppercase;
                 letter-spacing: -1px;
+
+                @include media('tablet') {
+                    font-size: 16px;
+                }
+                @include media('mobile') {
+                    font-size: 14px;
+                    gap: 18px;
+                }
 
                 li {
                     display: flex;
@@ -66,8 +114,16 @@
 
             &-link {
                 margin-top: auto;
+
+                @include media('mobile') {
+                    margin: 30px auto 0;
+                }
                 .text-wrapper {
                     padding: 22px 27px;
+
+                    @include media('mobile') {
+                        padding: 18px 20px;
+                    }
                 }
             }
 
@@ -78,6 +134,13 @@
                 max-width: 730px;
                 height: 660px;
                 @include transitions(0.7s);
+
+                @include media('tablet') {
+                    height: 450px;
+                }
+                @include media('mobile') {
+                    height: 350px;
+                }
 
                 img {
                     width: 100%;

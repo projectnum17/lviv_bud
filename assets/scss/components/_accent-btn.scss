@@ -14,7 +14,12 @@
         border-style: solid;
         position: relative;
         border-color: var(--black-color);
-        @include transitions (.3s);
+        @include transitions(0.3s);
+
+        @include media('mobile') {
+            font-size: 14px;
+            padding: 18px 20px;
+        }
 
         &::before {
             content: '';
@@ -45,11 +50,17 @@
         background-color: var(--accent-color);
         @include transitions(0.3s);
 
+        @include media('mobile') {
+            padding: 14px;
+        }
+
         &__items {
             overflow: hidden;
             position: relative;
             width: 24px;
             height: 24px;
+            display: flex;
+            flex-shrink: 0;
             img {
                 width: 100%;
                 height: 100%;

@@ -10,28 +10,65 @@
             align-items: flex-start;
             gap: 33px;
             justify-content: space-between;
+
+            @media (max-width: 1550px) {
+                flex-direction: column;
+            }
         }
         &__col {
             &:first-child {
                 max-width: 455px;
+
+                @media (max-width: 1550px) {
+                    max-width: 100%;
+                    width: 100%;
+                }
             }
 
             &:last-child {
                 position: relative;
                 width: 100%;
                 max-width: 992px;
+
+                @media (max-width: 1550px) {
+                    max-width: 100%;
+                    display: flex;
+                    flex-direction: column-reverse;
+                    gap: 20px;
+                }
+            }
+        }
+
+        &__about {
+            @media (max-width: 1550px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex-direction: column;
+                gap: 20px;
             }
         }
 
         &__title {
             margin-bottom: 40px;
+            @media (max-width: 1550px) {
+                margin-bottom: 0;
+            }
         }
 
         &__link {
             margin-bottom: 44px;
+            @media (max-width: 1550px) {
+                margin-bottom: 0;
+            }
             .text-wrapper {
                 padding: 22px 27px;
+
+                @include media('mobile') {
+                    padding: 18px 20px;
+                }
             }
+
         }
 
         &__animation {
@@ -41,6 +78,15 @@
                 width: 100%;
                 width: 100%;
                 height: auto;
+            }
+
+            @media (max-width: 1550px) {
+                position: absolute;
+                z-index: -1;
+                opacity: 0.2;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
             }
         }
 
@@ -58,12 +104,23 @@
             bottom: 0;
             left: 57%;
 
+            @media (max-width: 1550px) {
+                position: relative;
+                left: auto;
+                bottom: auto;
+                justify-content: flex-end;
+            }
+
             &-btn {
                 padding: 15px;
                 position: relative;
                 overflow: hidden;
                 border: 1px solid rgba(7, 7, 7, 0.2);
                 color: var(--black-color);
+
+                @include media('tablet') {
+                    padding: 10px;
+                }
 
                 &::after {
                     content: '';
@@ -95,6 +152,11 @@
                     flex-shrink: 0;
                     color: inherit;
                     @include transitions(0.3s);
+
+                    @include media('tablet') {
+                        width: 24px;
+                        height: 24px;
+                    }
                 }
             }
         }
@@ -105,10 +167,27 @@
             justify-content: space-between;
             gap: 20px;
 
+            @include media('mobile') {
+                flex-direction: column;
+            }
+
             &__thumb {
                 max-width: 496px;
                 width: 100%;
                 height: 620px;
+
+                @media (max-width: 1550px) {
+                    max-width: 100%;
+                    width: 50%;
+                }
+                @include media('tablet') {
+                    height: 450px;
+                }
+
+                @include media('mobile') {
+                    height: 350px;
+                    width: 100%;
+                }
 
                 img {
                     width: 100%;
@@ -119,6 +198,14 @@
 
             &__info {
                 max-width: 423px;
+                @media (max-width: 1550px) {
+                    max-width: 100%;
+                    width: 50%;
+                }
+
+                @include media('mobile') {
+                    width: 100%;
+                }
             }
 
             &__title {
@@ -131,6 +218,19 @@
                 counter-increment: card;
                 margin-bottom: 24px;
 
+                @include media('desktop') {
+                    font-size: 40px;
+                }
+                @include media('tablet') {
+                    font-size: 32px;
+                    gap: 18px;
+                }
+                @include media('mobile') {
+                    font-size: 24px;
+                    gap: 5px;
+                    margin-bottom: 12px;
+                }
+
                 &::before {
                     content: counter(card, decimal-leading-zero);
                     font: 500 24px / 100% var(--ff-primary);
@@ -142,6 +242,13 @@
             &__text {
                 font: 400 18px / 160% var(--ff-secondary);
                 color: var(--dark-grey);
+
+                @include media('tablet') {
+                    font-size: 16px;
+                }
+                @include media('mobile') {
+                    font-size: 14px;
+                }
             }
         }
     }
