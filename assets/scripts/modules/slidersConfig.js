@@ -49,16 +49,20 @@ const slidersConfig = () => {
             slidesPerView: 2,
             spaceBetween: 64,
             loop: false,
-            // extraOptions: {
-            //     breakpoints: {
-            //         768: {
-            //             slidesPerView: 1,
-            //         },
-            //         1024: {
-            //             slidesPerView: 2,
-            //         },
-            //     },
-            // },
+            extraOptions: {
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        spaceBetween: 20
+                    },
+                    992: {
+                        slidesPerView: 2,
+                    },
+                },
+            },
         });
 
         createSlider({

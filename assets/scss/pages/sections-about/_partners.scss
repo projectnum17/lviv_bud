@@ -10,6 +10,16 @@
             padding-bottom: 48px;
             margin-bottom: 48px;
             border-bottom: 1px solid rgba(7, 7, 7, 0.2);
+
+            @include media('tablet') {
+                padding-bottom: 24px;
+                margin-bottom: 24px;
+            }
+
+            @include media('mobile') {
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+            }
         }
 
         &__title {
@@ -20,6 +30,16 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 48px;
+
+            @include media('tablet') {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            @include media('mobile') {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 15px;
+            }
         }
 
         &__card {
@@ -30,8 +50,11 @@
             border: 1px solid rgba(7, 7, 7, 0.2);
 
             img {
-                mix-blend-mode: multiply;
                 width: 229px;
+
+                @include media('mobile') {
+                    width: 150px;
+                }
             }
         }
     }

@@ -1,6 +1,6 @@
 .animation--simple {
     opacity: 0;
-    transform: translateY(10%);
+    transform: translateY(20px);
     transition: 0.5s linear;
     will-change: transform, opacity;
 
