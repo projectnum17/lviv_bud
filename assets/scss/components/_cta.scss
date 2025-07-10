@@ -29,13 +29,36 @@
 
         &.link--lg {
             gap: 32px;
+
+            @include media('tablet') {
+                gap: 24px;
+            }
+
+            @include media('tablet') {
+                gap: 12px;
+            }
+
             span {
                 &:first-child {
                     padding: 20px;
 
+                    @include media('tablet') {
+                        padding: 15px;
+                    }
+
+                    @include media('mobile') {
+                        padding: 10px;
+                    }
+
                     svg {
+                        display: flex;
+                        flex-shrink: 0;
                         width: 48px;
                         height: 48px;
+                        @include media('mobile') {
+                            width: 36px;
+                            height: 36px;
+                        }
                     }
                 }
 
@@ -43,6 +66,9 @@
                     font: 400 18px / 130% var(--ff-secondary);
                     letter-spacing: 1px;
                     text-transform: uppercase;
+                    @include media('mobile') {
+                        font-size: 16px;
+                    }
                 }
             }
         }

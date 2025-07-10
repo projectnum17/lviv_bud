@@ -41,6 +41,22 @@ const slidersConfig = () => {
             slidesPerView: 4,
             spaceBetween: 48,
             loop: true,
+
+            extraOptions: {
+                breakpoints: {
+                    320: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    992: {
+                        slidesPerView: 4,
+                    },
+                },
+            },
         });
 
         createSlider({
