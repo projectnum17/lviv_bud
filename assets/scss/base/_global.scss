@@ -88,6 +88,12 @@ a {
     padding-left: calc(
         (100% - var(--container-width)) / 2 + var(--container-padding)
     );
+
+    @media (max-width: 1510px) {
+        & > div {
+            padding-left: 20px;
+        }
+    }
 }
 
 .container--left {
@@ -98,7 +104,7 @@ a {
 
 section {
     @include media('mobile') {
-        scroll-margin-top: 80px;
+        scroll-margin-top: 56px;
     }
 }
 
@@ -106,8 +112,18 @@ section {
     font: 500 72px / 110% var(--ff-primary);
     letter-spacing: -1px;
     text-transform: uppercase;
+
     span {
         color: var(--accent-color);
+    }
+    @include media('desktop') {
+        font-size: 56px;
+    }
+    @include media('tablet') {
+        font-size: 40px;
+    }
+    @include media('mobile') {
+        font-size: 32px;
     }
 }
 
