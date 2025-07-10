@@ -33,6 +33,18 @@
             max-width: 653px;
             margin-bottom: 48px;
             color: var(--light-grey);
+            @include media('desktop') {
+                font-size: 40px;
+            }
+            @include media('tablet') {
+                font-size: 32px;
+                margin-bottom: 36px;
+            }
+            @include media('mobile') {
+                max-width: 100%;
+                font-size: 24px;
+                margin-bottom: 24px;
+            }
         }
 
         &__item {
@@ -44,6 +56,10 @@
             &-label {
                 font: 400 16px / 100% var(--ff-secondary);
                 color: var(--light-grey);
+
+                @include media('mobile') {
+                    font-size: 14px;
+                }
             }
 
             &-field {
@@ -64,6 +80,10 @@
                 &::placeholder {
                     opacity: 0.4;
                     color: var(--light-grey);
+                }
+
+                @include media('mobile') {
+                    padding-block: 12px;
                 }
             }
 

@@ -16,15 +16,15 @@ body {
 
     &:not(:has(.main--home)) {
         .header {
-            position: sticky;
-            overflow: visible;
-            top: 0;
+            // position: sticky;
+            // overflow: visible;
+            // top: 0;
             background: var(--light-grey);
             color: var(--black-color);
             border-color: #dfdfdf;
 
             &--transparent {
-                background: transparent;
+                // background: transparent;
                 border-color: rgba(7, 7, 7, 0.1);
 
                 .header__lang {

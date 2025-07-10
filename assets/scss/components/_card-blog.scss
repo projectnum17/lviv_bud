@@ -5,10 +5,18 @@
     flex-direction: column;
     gap: 20px;
 
+    @include media('mobile') {
+        gap: 12px;
+    }
+
     &__row {
         &:first-child {
             position: relative;
             height: 372px;
+
+            @include media('mobile') {
+                height: 350px;
+            }
 
             &::after {
                 pointer-events: none;
@@ -68,6 +76,12 @@
         top: 20px;
         left: 20px;
         padding: 8px 12px;
+
+        @include media('mobile') {
+            font-size: 14px;
+            top: 10px;
+            left: 10px;
+        }
     }
 
     &__date {
@@ -77,6 +91,11 @@
         gap: 12px;
         margin-bottom: 16px;
         color: var(--dark-grey);
+
+        @include media('mobile') {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
 
         &::before {
             content: '';
@@ -93,6 +112,10 @@
         text-transform: uppercase;
         letter-spacing: -1px;
         @include transitions(0.3s);
+
+        @include media('mobile') {
+            font-size: 16px;
+        }
     }
 
     &--news {

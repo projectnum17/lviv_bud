@@ -4,8 +4,17 @@
 .main--contact {
     .content {
         max-width: 1920px;
+        padding-top: 82px;
         margin: 0 auto;
         margin-bottom: var(--section-padding);
+
+        @include media('tablet') {
+            padding-top: 77px;
+        }
+
+        @include media('mobile') {
+            padding-top: 57px;
+        }
 
         .container--right {
             display: flex;
@@ -19,7 +28,7 @@
         }
 
         &__about {
-            padding-top: 112px;
+            padding-top: 196px;
             max-width: 680px;
             width: 100%;
             border-bottom: 1px solid var(--dark-grey);
