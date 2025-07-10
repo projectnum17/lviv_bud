@@ -6,10 +6,20 @@
     position: fixed;
     overflow: hidden;
     width: 100%;
+    height: 82px;
     padding-block: 12px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--light-grey);
     @include transitions(0.3s);
+
+    @include media('tablet') {
+        height: auto;
+        padding-block: 10px;
+    }
+
+    @include media('mobile') {
+        padding: 0;
+    }
 
     &--scrolled,
     &--transparent {
@@ -47,6 +57,12 @@
         background: transparent;
     }
 
+    .container {
+        @include media('tablet') {
+            padding-inline: 12px;
+        }
+    }
+
     &__panel {
         display: flex;
         gap: 20px;
@@ -57,10 +73,19 @@
     &__logo {
         max-width: 179px;
         flex-shrink: 0;
+
         svg {
             width: 100%;
             color: var(--white-color);
             @include transitions(0.3s);
+        }
+
+        @include media('tablet') {
+            max-width: 150px;
+        }
+
+        @include media('mobile') {
+            max-width: 90px;
         }
     }
 
@@ -75,11 +100,23 @@
         gap: 40px;
         margin-right: 47px;
 
+        @include media('desktop') {
+            gap: 12px;
+            margin-right: 15px;
+        }
+        @include media('mobile') {
+            display: none;
+        }
+
         a {
             font: 400 18px / 100% var(--ff-secondary);
             letter-spacing: 1px;
             text-transform: uppercase;
             @include transitions(0.3s);
+
+            @include media('tablet') {
+                font-size: 14px;
+            }
         }
     }
 
@@ -94,11 +131,18 @@
         &::before {
             content: '';
             position: absolute;
-            height: 100px;
+            height: 84px;
             width: 1px;
             pointer-events: none;
             background: rgba(250, 248, 255, 0.1);
             @include transitions(0.3s);
+
+            @include media('tablet') {
+                height: 77px;
+            }
+            @include media('mobile') {
+                height: 56px;
+            }
         }
 
         &::after {
@@ -109,15 +153,31 @@
             right: 0;
         }
 
+        @include media('desktop') {
+            padding-inline: 15px;
+            gap: 12px;
+            margin-right: 15px;
+        }
+
+        @include media('mobile') {
+            padding-inline: 10px;
+            gap: 8px;
+            margin-right: 10px;
+        }
+
         &-link {
             font: 400 18px / 100% var(--ff-secondary);
             letter-spacing: 1px;
             text-transform: uppercase;
-            opacity: .3;
+            opacity: 0.3;
             @include transitions(0.3s);
 
             &.lang--active {
                 opacity: 1;
+            }
+
+            @include media('tablet') {
+                font-size: 14px;
             }
         }
     }
@@ -128,12 +188,26 @@
         gap: 18px;
         color: inherit;
         @include transitions(0.3s);
+        @include media('tablet') {
+            gap: 12px;
+        }
+        @include media('mobile') {
+            gap: 0;
+        }
 
         &-text {
             font: 400 18px / 100% var(--ff-secondary);
             letter-spacing: 1px;
             text-transform: uppercase;
             @include transitions(0.3s);
+
+            @include media('tablet') {
+                font-size: 14px;
+                line-height: 120%;
+            }
+            @include media('mobile') {
+                display: none;
+            }
         }
 
         &-btn {
@@ -153,6 +227,10 @@
                 transform: translateX(-50%) rotate(0deg);
                 background: var(--white-color);
                 @include transitions(0.3s);
+
+                @include media('mobile') {
+                    width: 30px;
+                }
             }
 
             &::after {

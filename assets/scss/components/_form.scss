@@ -89,6 +89,8 @@
             &__items {
                 overflow: hidden;
                 position: relative;
+                display: inline-flex;
+                flex-shrink: 0;
                 width: 24px;
                 height: 24px;
                 img {
@@ -160,10 +162,14 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            @include media('mobile') {
+                align-items: flex-start;
+            }
 
             &::before {
                 content: '';
                 display: inline-flex;
+                flex-shrink: 0;
                 width: 20px;
                 height: 20px;
                 border: 1px solid var(--black-color);

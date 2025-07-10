@@ -27,6 +27,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @include media('mobile') {
+            overflow: scroll;
+            padding-inline: 5px;
+            max-width: 100%;
+            height: 90%;
+            overflow: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
     }
 
     .form-box {
@@ -34,6 +48,50 @@
         transform: translateY(-20%);
         opacity: 0;
         @include transitions(0.3s);
+        @include media('mobile') {
+            padding: 40px 20px 20px 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: scroll;
+            overflow: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            &__review {
+                height: 100%;
+                gap: 20px;
+            }
+
+            &__title {
+                font-size: 22px;
+                line-height: 120%;
+                margin-bottom: 16px;
+            }
+
+            &__subtitle {
+                font-size: 14px;
+                line-height: 120%;
+                margin-bottom: 25px;
+            }
+
+            &__submit {
+                margin-top: auto;
+                width: 100%;
+                justify-content: center;
+            }
+
+            &__input,
+            input[type='text'],
+            input[type='tel'],
+            input[type='number'] {
+                padding-block: 10px;
+            }
+        }
 
         &__close {
             position: absolute;
@@ -46,11 +104,22 @@
             justify-content: center;
             background: var(--accent-color);
             color: var(--light-grey);
+
+            @include media('mobile') {
+                width: 36px;
+                height: 36px;
+            }
+
             svg {
                 display: inline-flex;
                 width: 28px;
                 height: 28px;
                 color: inherit;
+
+                @include media('mobile') {
+                    width: 24px;
+                    height: 24px;
+                }
             }
         }
     }
