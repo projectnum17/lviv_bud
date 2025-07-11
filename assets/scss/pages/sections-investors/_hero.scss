@@ -7,7 +7,7 @@
         max-width: 1920px;
         overflow: hidden;
         padding-top: 82px;
-        margin: 0 auto var(--section-padding);
+        margin: 0 auto;
 
         @include media('tablet') {
             padding-top: 77px;

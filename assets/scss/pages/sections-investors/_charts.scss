@@ -1,0 +1,249 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.main--investors {
+    .charts {
+        margin-bottom: var(--section-padding);
+
+        @include media('mobile') {
+            padding-top: var(--section-padding);
+        }
+
+        &__title {
+            max-width: 686px;
+            transform: translateY(50%);
+
+            @include media('mobile') {
+                transform: translateY(0);
+                margin-bottom: 24px;
+                text-align: center;
+            }
+        }
+
+        &__wrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            place-items: end;
+
+            &-item {
+                position: relative;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .canvas-columns {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            place-items: end;
+            position: relative;
+            overflow: hidden;
+
+            @include media('tablet') {
+                gap: 12px;
+            }
+
+            @include media('mobile') {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            &__column {
+                display: flex;
+                flex-direction: column;
+                max-width: 372px;
+                width: 100%;
+                gap: 24px;
+
+                @include media('mobile') {
+                    max-width: 100%;
+                    width: 100%;
+                    padding-bottom: 20px;
+                    border-bottom: 2px solid var(--accent-color);
+                }
+
+                &.col-1 {
+                    height: 833px;
+                    @include media('mobile') {
+                        height: auto;
+                    }
+                }
+                &.col-2 {
+                    height: 937px;
+                    @include media('mobile') {
+                        height: auto;
+                    }
+                }
+                &.col-3 {
+                    height: 1016px;
+                    @include media('mobile') {
+                        height: auto;
+                    }
+                }
+                &.col-4 {
+                    height: 1120px;
+                    @include media('mobile') {
+                        height: auto;
+                    }
+                }
+            }
+            &__about {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                left: 64px;
+                top: 50%;
+                z-index: 2;
+
+                @include media('tablet') {
+                    gap: 20px;
+                    left: 32px;
+                }
+
+                @include media('mobile') {
+                    gap: 12px;
+                    position: relative;
+                    left: auto;
+                    text-align: center;
+                    width: 100%;
+                    top: auto;
+                }
+
+                p {
+                    margin: 0;
+                    max-width: 543px;
+                    @include media('mobile') {
+                        max-width: 100%;
+                    }
+
+                    &:first-child {
+                        font: 700 100px / 110% var(--ff-primary);
+                        text-transform: uppercase;
+                        letter-spacing: -1px;
+
+                        @include media('desktop') {
+                            font-size: 72px;
+                        }
+                        @include media('tablet') {
+                            font-size: 56px;
+                        }
+                        @include media('mobile') {
+                            font-size: 32px;
+                        }
+                    }
+
+                    &:last-child {
+                        font: 500 32px / 110% var(--ff-primary);
+                        text-transform: uppercase;
+                        letter-spacing: -1px;
+
+                        @include media('tablet') {
+                            font-size: 28px;
+                        }
+
+                        @include media('mobile') {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+
+            &__descr {
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+                align-items: flex-end;
+
+                @include media('mobile') {
+                    flex-direction: row-reverse;
+                    justify-content: center;
+                }
+
+                &::before {
+                    content: '';
+                    display: inline-flex;
+                    width: 18px;
+                    height: 18px;
+                    margin-bottom: 8px;
+                    flex-shrink: 0;
+                    margin-right: auto;
+                    background: var(--accent-color);
+
+                    @include media('mobile') {
+                        display: none;
+                    }
+                }
+            }
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-end;
+
+                @include media('mobile') {
+                    flex-direction: column-reverse;
+                    align-items: flex-start;
+                    align-items: center;
+                }
+
+                &__title {
+                    font: 500 20px / 100% var(--ff-primary);
+                    text-transform: uppercase;
+                    letter-spacing: -1px;
+
+                    @include media('tablet') {
+                        font-size: 18px;
+                    }
+                    @include media('mobile') {
+                        font-size: 16px;
+                    }
+                }
+
+                &__val {
+                    display: flex;
+                    font: 500 48px / 100% var(--ff-primary);
+                    text-transform: uppercase;
+                    letter-spacing: -1px;
+                    @include media('desktop') {
+                        font-size: 40px;
+                    }
+                    @include media('tablet') {
+                        font-size: 32px;
+                    }
+                    @include media('mobile') {
+                        font-size: 24px;
+                    }
+                }
+
+                span {
+                    text-align: right;
+                }
+            }
+
+            canvas {
+                height: 100%;
+                width: 100%;
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                @include media('mobile') {
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -13,6 +13,7 @@ import videoObserver from './modules/videoObserver.js';
 import canvasDeco from './modules/canvasDeco.js';
 import progressBar from './modules/progressBar.js';
 import tabs from './modules/tabs.js';
+import charts from './modules/charts.js';
 import animationObserver from './modules/animationObserver.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,5 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     canvasDeco();
     progressBar();
     tabs();
+    charts();
     animationObserver();
 });
