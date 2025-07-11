@@ -1,0 +1,38 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.main--article {
+    .news {
+        margin-bottom: var(--section-padding);
+        padding-top: var(--section-padding);
+        &__title {
+            margin-bottom: 40px;
+            font: 500 48px / 110% var(--ff-primary);
+            text-transform: uppercase;
+            letter-spacing: -1px;
+
+            @include media('tablet') {
+                font-size: 32px;
+                margin-bottom: 30px;
+            }
+            @include media('mobile') {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+        }
+
+        &__cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+
+            @include media('tablet') {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @include media('mobile') {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 20px;
+            }
+        }
+    }
+}
