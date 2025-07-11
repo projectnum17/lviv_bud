@@ -5,10 +5,22 @@ const heroCanvas = () => {
 
     const ctx = canvas.getContext('2d');
 
-    const baseWidth = 560;
-    const baseHeight = 665;
+    let baseWidth = 660;
+    let baseHeight = 764;
 
     const resizeCanvas = () => {
+        const displayWidth = window.innerWidth;
+
+        if (displayWidth < 992) {
+            baseWidth = 460;
+            baseHeight = 564;
+        }
+
+        if (displayWidth < 768) {
+            baseWidth = 300;
+            baseHeight = 300;
+        }
+
         canvas.width = canvas.clientWidth;
         canvas.height = canvas.clientHeight;
     };

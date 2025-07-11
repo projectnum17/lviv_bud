@@ -75,6 +75,9 @@
 
         &.link--sm {
             gap: 24px;
+            @include media('mobile') {
+                gap: 12px;
+            }
             span {
                 &:first-child {
                     padding: 7px;
@@ -89,6 +92,10 @@
                     font: 400 16px / 130% var(--ff-secondary);
                     letter-spacing: 1px;
                     text-transform: uppercase;
+
+                    @include media('mobile') {
+                        font-size: 14px;
+                    }
                 }
             }
         }

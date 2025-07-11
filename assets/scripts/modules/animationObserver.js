@@ -22,7 +22,7 @@ const animationObserver = () => {
                 if (el.hasAttribute('data-number')) {
                     const target = parseInt(el.getAttribute('data-number'), 10);
                     const duration = 2000;
-                    const stepTime = 40;
+                    const stepTime = 50;
                     const steps = Math.ceil(duration / stepTime);
 
                     const increment = target > 100 ? 10 : 1;
