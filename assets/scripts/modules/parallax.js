@@ -5,10 +5,31 @@ const parallax = () => {
     }
 
     setVh();
-    window.addEventListener('resize', setVh);
+    window.addEventListener('resize', () => {
+        setVh();
+        updateItems();
+    });
 
-    const projectItems = document.querySelectorAll('.projects__item');
-    let rafScheduled = false;
+    const projectItems = Array.from(
+        document.querySelectorAll('.projects__item')
+    );
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const cachedItems = [];
+
+    function updateItems() {
+        cachedItems.length = 0;
+        projectItems.forEach((item) => {
+            cachedItems.push({
+                item,
+                bg: item.querySelector('.bg-thumbnail'),
+                stick: item.querySelector('.stick'),
+            });
+        });
+    }
+
+    updateItems();
 
     function applyParallaxTransform(element, fallbackSpeed, offset) {
         if (!element) return;
@@ -19,30 +40,26 @@ const parallax = () => {
 
     function updateParallax() {
         const viewportHeight = window.innerHeight;
-        projectItems.forEach((item) => {
+
+        cachedItems.forEach(({ item, bg, stick }) => {
             const rect = item.getBoundingClientRect();
             const offset = rect.top + rect.height / 2 - viewportHeight / 2;
 
-            applyParallaxTransform(
-                item.querySelector('.bg-thumbnail'),
-                0.8,
-                offset
-            );
-            applyParallaxTransform(item.querySelector('.stick'), 0.5, offset);
+            applyParallaxTransform(bg, 0.8, offset);
+            applyParallaxTransform(stick, 0.5, offset);
         });
     }
 
-    const onScroll = () => {
-        if (!rafScheduled) {
-            requestAnimationFrame(() => {
-                updateParallax();
-                rafScheduled = false;
-            });
-            rafScheduled = true;
+    function onFrame() {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY !== lastScrollY) {
+            updateParallax();
+            lastScrollY = currentScrollY;
         }
-    };
+        requestAnimationFrame(onFrame);
+    }
 
-    window.addEventListener('scroll', onScroll);
+    requestAnimationFrame(onFrame);
 };
 
 export default parallax;

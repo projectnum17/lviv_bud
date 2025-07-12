@@ -3,22 +3,29 @@ const videoObserver = () => {
 
     if (!lazyVideos.length) return;
 
+    const loadAndPlayVideo = (video) => {
+        const sources = video.querySelectorAll('source[data-src]');
+        sources.forEach((source) => {
+            source.src = source.dataset.src;
+        });
+
+        video.load();
+
+        video.play().catch((e) => {
+            console.warn('Video autoplay failed:', e);
+        });
+
+        video.classList.remove('lazyVideo');
+    };
+
     if ('IntersectionObserver' in window) {
         const lazyVideoObserver = new IntersectionObserver(
             (entries, observer) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         const video = entry.target;
-                        const sources =
-                            video.querySelectorAll('source[data-src]');
-
-                        sources.forEach((source) => {
-                            source.src = source.dataset.src;
-                        });
-
-                        video.load();
-                        video.classList.remove('lazyVideo');
-                        lazyVideoObserver.unobserve(video);
+                        loadAndPlayVideo(video);
+                        observer.unobserve(video);
                     }
                 });
             }
@@ -28,14 +35,7 @@ const videoObserver = () => {
             lazyVideoObserver.observe(video);
         });
     } else {
-        lazyVideos.forEach((video) => {
-            const sources = video.querySelectorAll('source[data-src]');
-            sources.forEach((source) => {
-                source.src = source.dataset.src;
-            });
-            video.load();
-            video.classList.remove('lazyVideo');
-        });
+        lazyVideos.forEach(loadAndPlayVideo);
     }
 };
 

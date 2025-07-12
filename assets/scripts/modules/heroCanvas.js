@@ -7,25 +7,30 @@ const heroCanvas = () => {
 
     let baseWidth = 660;
     let baseHeight = 764;
+    let scale = 1;
+    let needsUpdate = true;
 
-    const resizeCanvas = () => {
+    const updateBaseSize = () => {
         const displayWidth = window.innerWidth;
-
-        if (displayWidth < 992) {
-            baseWidth = 460;
-            baseHeight = 564;
-        }
-
         if (displayWidth < 768) {
             baseWidth = 300;
             baseHeight = 300;
+        } else if (displayWidth < 992) {
+            baseWidth = 460;
+            baseHeight = 564;
+        } else {
+            baseWidth = 660;
+            baseHeight = 764;
         }
+    };
 
+    const resizeCanvas = () => {
+        updateBaseSize();
         canvas.width = canvas.clientWidth;
         canvas.height = canvas.clientHeight;
     };
 
-    const drawCanvas = (scale = 1) => {
+    const drawCanvas = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
@@ -47,26 +52,36 @@ const heroCanvas = () => {
         ctx.globalCompositeOperation = 'source-over';
     };
 
-    const onScroll = () => {
+    const updateScale = () => {
         const heroRect = hero.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-
         const progress = Math.min(1, Math.max(0, -heroRect.top / windowHeight));
-
-        const scale = 1 + progress * 4;
-
-        drawCanvas(scale);
+        scale = 1 + progress * 4;
     };
+
+    const renderLoop = () => {
+        if (needsUpdate) {
+            drawCanvas();
+            needsUpdate = false;
+        }
+        requestAnimationFrame(renderLoop);
+    };
+
+    window.addEventListener('scroll', () => {
+        updateScale();
+        needsUpdate = true;
+    });
 
     window.addEventListener('resize', () => {
         resizeCanvas();
-        drawCanvas();
+        updateScale();
+        needsUpdate = true;
     });
 
-    window.addEventListener('scroll', onScroll);
-
     resizeCanvas();
-    drawCanvas();
+    updateScale();
+    needsUpdate = true;
+    renderLoop();
 };
 
 export default heroCanvas;

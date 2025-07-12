@@ -7,17 +7,33 @@ const heroFlow = () => {
     if (!preloader || !heroPreview || !contentInner || !videoInner) return;
 
     preloader.classList.add('hide');
-    heroPreview.classList.add('show');
-    setTimeout(() => {
-        heroPreview.classList.add('hide');
-    }, 500);
-    contentInner.classList.add('show', 'animation--simple');
-    videoInner.classList.add('show');
 
     setTimeout(() => {
-        preloader.remove();
-        heroPreview.remove();
-    }, 2000);
+        heroPreview.classList.add('show');
+
+        setTimeout(() => {
+            heroPreview.classList.add('hide');
+        }, 500);
+
+        contentInner.classList.add('show', 'animation--simple');
+        videoInner.classList.add('show');
+    }, 50); 
+
+    preloader.addEventListener(
+        'transitionend',
+        () => {
+            preloader.remove();
+        },
+        { once: true }
+    );
+
+    heroPreview.addEventListener(
+        'transitionend',
+        () => {
+            heroPreview.remove();
+        },
+        { once: true }
+    );
 };
 
 export default heroFlow;

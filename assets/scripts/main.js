@@ -17,6 +17,20 @@ import charts from './modules/charts.js';
 import animationObserver from './modules/animationObserver.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    const preloader = () => {
+        const preloader = document.querySelector('#preloader');
+        if (!preloader) return;
+
+        requestAnimationFrame(() => {
+            preloader.classList.add('hide');
+        });
+
+        setTimeout(() => {
+            preloader.remove();
+        }, 600);
+    };
+    preloader();
+
     heroFlow();
     headerFlow();
     asideMenu();
