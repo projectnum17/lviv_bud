@@ -17,23 +17,12 @@ const heroFlow = () => {
 
         contentInner.classList.add('show', 'animation--simple');
         videoInner.classList.add('show');
-    }, 50); 
+    }, 50);
 
-    preloader.addEventListener(
-        'transitionend',
-        () => {
-            preloader.remove();
-        },
-        { once: true }
-    );
-
-    heroPreview.addEventListener(
-        'transitionend',
-        () => {
-            heroPreview.remove();
-        },
-        { once: true }
-    );
+    setTimeout(() => {
+        preloader.remove();
+        heroPreview.remove();
+    }, 2000);
 };
 
 export default heroFlow;
